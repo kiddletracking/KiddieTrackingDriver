@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_homeFragment_to_registerChildFragment"
             app:destination="@id/registerChildFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_journeyFragment"
+            app:destination="@id/journeyFragment" />
     </fragment>
     <fragment
         android:id="@+id/userDetailsFragment"
@@ -59,4 +62,9 @@
         android:name="com.wadachirebandi.kiddietrackingadmin.ui.fragments.RegisterChildFragment"
         android:label="fragment_register_child"
         tools:layout="@layout/fragment_register_child" />
+    <fragment
+        android:id="@+id/journeyFragment"
+        android:name="com.wadachirebandi.kiddietrackingadmin.ui.fragments.JourneyFragment"
+        android:label="fragment_journey"
+        tools:layout="@layout/fragment_journey" />
 </navigation>

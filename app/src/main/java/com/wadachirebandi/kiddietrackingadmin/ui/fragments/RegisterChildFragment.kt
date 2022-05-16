@@ -34,7 +34,7 @@ class RegisterChildFragment : Fragment() {
 
     private var storageRef = Firebase.storage.reference
 
-    val userDao = UserDao()
+    private val userDao = UserDao()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -122,7 +122,7 @@ class RegisterChildFragment : Fragment() {
                             parentName = binding.parentName.text.toString(),
                             parentContact = binding.parentsContact.text.toString()
                         )
-                        userDao.userCollection.add(newChild).addOnSuccessListener {
+                        userDao.userCollection.document(firebaseUser.uid).set(newChild).addOnSuccessListener {
                             Toast.makeText(
                                 requireContext(), "Child Register successful", Toast.LENGTH_SHORT
                             ).show()
@@ -135,7 +135,6 @@ class RegisterChildFragment : Fragment() {
                             binding.createChildButton.visibility = View.VISIBLE
                         }
                     }
-                    val user = User(uid = firebaseUser.uid)
 
                 } else {
                     Toast.makeText(

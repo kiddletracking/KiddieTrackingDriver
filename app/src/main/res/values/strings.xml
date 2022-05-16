@@ -15,4 +15,6 @@
     <string name="save">Save</string>
     <string name="register_new_child">Register New Child</string>
     <string name="create_account">Create Account</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

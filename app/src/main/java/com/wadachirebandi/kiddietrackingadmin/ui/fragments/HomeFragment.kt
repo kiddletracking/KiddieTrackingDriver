@@ -33,6 +33,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_registerChildFragment)
         }
 
+        binding.journey.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_journeyFragment)
+        }
+
         return binding.root
     }
 }
