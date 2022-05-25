@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.ui
+package com.wadachirebandi.kiddietrackingdriver.ui
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -7,19 +7,22 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
-import com.wadachirebandi.kiddietrackingadmin.R
-import com.wadachirebandi.kiddietrackingadmin.daos.LocationDao
+import com.wadachirebandi.kiddietrackingdriver.daos.LocationDao
+import com.wadachirebandi.kiddietrackingdriver.databinding.ActivityMainBinding
 import kotlinx.coroutines.delay
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var fusedLocClient: FusedLocationProviderClient
 
+    private lateinit var binding: ActivityMainBinding
+
     private var liveLocation = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setupLocClient()
     }
 

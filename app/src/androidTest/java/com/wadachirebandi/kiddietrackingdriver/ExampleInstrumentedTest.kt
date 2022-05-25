@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin
+package com.wadachirebandi.kiddietrackingdriver
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,7 +1,7 @@
-package com.wadachirebandi.kiddietrackingadmin.notification
+package com.wadachirebandi.kiddietrackingdriver.notification
 
-import com.wadachirebandi.kiddietrackingadmin.notification.NotificationConstants.CONTENT_TYPE
-import com.wadachirebandi.kiddietrackingadmin.notification.NotificationConstants.SERVER_KEY
+import com.wadachirebandi.kiddietrackingdriver.notification.NotificationConstants.CONTENT_TYPE
+import com.wadachirebandi.kiddietrackingdriver.notification.NotificationConstants.SERVER_KEY
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body

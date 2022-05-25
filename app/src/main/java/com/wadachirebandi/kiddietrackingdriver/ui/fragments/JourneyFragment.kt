@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.ui.fragments
+package com.wadachirebandi.kiddietrackingdriver.ui.fragments
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -11,14 +11,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import com.wadachirebandi.kiddietrackingadmin.R
-import com.wadachirebandi.kiddietrackingadmin.daos.LocationDao
-import com.wadachirebandi.kiddietrackingadmin.databinding.FragmentJourneyBinding
-import com.wadachirebandi.kiddietrackingadmin.models.Location
-import com.wadachirebandi.kiddietrackingadmin.notification.NotificationData
-import com.wadachirebandi.kiddietrackingadmin.notification.PushNotification
-import com.wadachirebandi.kiddietrackingadmin.notification.RetrofitInstance
-import com.wadachirebandi.kiddietrackingadmin.ui.MainActivity
+import com.wadachirebandi.kiddietrackingdriver.R
+import com.wadachirebandi.kiddietrackingdriver.daos.LocationDao
+import com.wadachirebandi.kiddietrackingdriver.databinding.FragmentJourneyBinding
+import com.wadachirebandi.kiddietrackingdriver.models.Location
+import com.wadachirebandi.kiddietrackingdriver.notification.NotificationData
+import com.wadachirebandi.kiddietrackingdriver.notification.PushNotification
+import com.wadachirebandi.kiddietrackingdriver.notification.RetrofitInstance
+import com.wadachirebandi.kiddietrackingdriver.ui.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -84,15 +84,23 @@ class JourneyFragment : Fragment() {
 
     private fun endJourney() {
         LocationDao().locationCollection.set(Location(false))
+        PushNotification(
+            NotificationData("Bus Location", "Bus have stopped the journey"),
+            TOPIC
+        ).also {
+            sendNotification(it)
+        }
         startActivity(Intent(requireContext(), MainActivity::class.java))
         (activity as MainActivity).finish()
     }
 
     private fun checkJourney() {
         LocationDao().locationCollection.get().addOnSuccessListener {
-            liveLocation = it["live_location"] as Boolean
-            if (liveLocation) {
-                binding.startJourneyButton.visibility = View.GONE
+            if (it.exists()){
+                liveLocation = it["live_location"] as Boolean
+                if (liveLocation) {
+                    binding.startJourneyButton.visibility = View.GONE
+                }
             }
         }
     }
@@ -104,7 +112,7 @@ class JourneyFragment : Fragment() {
             (activity as MainActivity).getLiveLocation()
         }
         PushNotification(
-            NotificationData("Bus Location", "Bus have started a journey"),
+            NotificationData("Bus Location", "Bus have started the journey"),
             TOPIC
         ).also {
             sendNotification(it)

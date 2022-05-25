@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.ui.fragments
+package com.wadachirebandi.kiddietrackingdriver.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.wadachirebandi.kiddietrackingadmin.daos.DriverDao
-import com.wadachirebandi.kiddietrackingadmin.databinding.FragmentDriverBinding
-import com.wadachirebandi.kiddietrackingadmin.models.Driver
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.wadachirebandi.kiddietrackingdriver.daos.DriverDao
+import com.wadachirebandi.kiddietrackingdriver.databinding.FragmentDriverBinding
+import com.wadachirebandi.kiddietrackingdriver.models.Driver
 
 class DriverFragment : Fragment() {
 
@@ -19,13 +21,15 @@ class DriverFragment : Fragment() {
 
     private val driverDao = DriverDao()
 
+    private val auth = Firebase.auth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDriverBinding.inflate(layoutInflater, container, false)
 
-        driverDao.driverCollection.document("OtQfKg2Qxi6QAvzQIMLG")
+        driverDao.driverCollection.document(auth.uid!!)
             .get().addOnSuccessListener {
                 updateUi((it.toObject(Driver::class.java)))
             }

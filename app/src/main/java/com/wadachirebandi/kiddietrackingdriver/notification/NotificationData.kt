@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.notification
+package com.wadachirebandi.kiddietrackingdriver.notification
 
 data class NotificationData(
 

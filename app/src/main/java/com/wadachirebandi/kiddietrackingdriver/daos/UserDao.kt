@@ -1,11 +1,10 @@
-package com.wadachirebandi.kiddietrackingadmin.daos
+package com.wadachirebandi.kiddietrackingdriver.daos
 
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class DriverDao {
+class UserDao {
 
     private val db = Firebase.firestore
-    val driverCollection = db.collection("Driver")
-
+    val userCollection = db.collection("Users")
 }

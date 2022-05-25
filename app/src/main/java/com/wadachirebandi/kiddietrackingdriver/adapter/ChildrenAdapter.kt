@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.adapter
+package com.wadachirebandi.kiddietrackingdriver.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.wadachirebandi.kiddietrackingadmin.databinding.ChildItemViewBinding
-import com.wadachirebandi.kiddietrackingadmin.models.User
-import com.wadachirebandi.kiddietrackingadmin.notification.NotificationData
-import com.wadachirebandi.kiddietrackingadmin.notification.PushNotification
-import com.wadachirebandi.kiddietrackingadmin.notification.RetrofitInstance
+import com.wadachirebandi.kiddietrackingdriver.databinding.ChildItemViewBinding
+import com.wadachirebandi.kiddietrackingdriver.models.User
+import com.wadachirebandi.kiddietrackingdriver.notification.NotificationData
+import com.wadachirebandi.kiddietrackingdriver.notification.PushNotification
+import com.wadachirebandi.kiddietrackingdriver.notification.RetrofitInstance
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

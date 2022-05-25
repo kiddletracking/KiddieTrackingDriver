@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.ui.fragments
+package com.wadachirebandi.kiddietrackingdriver.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.wadachirebandi.kiddietrackingadmin.adapter.ChildrenAdapter
-import com.wadachirebandi.kiddietrackingadmin.daos.UserDao
-import com.wadachirebandi.kiddietrackingadmin.databinding.FragmentChildDetailsBinding
-import com.wadachirebandi.kiddietrackingadmin.models.User
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.wadachirebandi.kiddietrackingdriver.adapter.ChildrenAdapter
+import com.wadachirebandi.kiddietrackingdriver.daos.UserDao
+import com.wadachirebandi.kiddietrackingdriver.databinding.FragmentChildDetailsBinding
+import com.wadachirebandi.kiddietrackingdriver.models.User
 
 class ChildDetailsFragment : Fragment() {
 
@@ -20,6 +22,8 @@ class ChildDetailsFragment : Fragment() {
     private lateinit var adapter: ChildrenAdapter
 
     private val userDao = UserDao()
+
+    private val auth = Firebase.auth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +37,7 @@ class ChildDetailsFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        val query = userDao.userCollection
+        val query = userDao.userCollection.whereEqualTo("driverUid", auth.uid!!)
 
         val recyclerViewOptions =
             FirestoreRecyclerOptions.Builder<User>().setQuery(query, User::class.java)

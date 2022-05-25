@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.ui.fragments
+package com.wadachirebandi.kiddietrackingdriver.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.wadachirebandi.kiddietrackingadmin.R
-import com.wadachirebandi.kiddietrackingadmin.databinding.FragmentHomeBinding
+import com.wadachirebandi.kiddietrackingdriver.R
+import com.wadachirebandi.kiddietrackingdriver.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
@@ -27,10 +27,6 @@ class HomeFragment : Fragment() {
 
         binding.driverDetails.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_driverFragment)
-        }
-
-        binding.registerChild.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_registerChildFragment)
         }
 
         binding.journey.setOnClickListener {

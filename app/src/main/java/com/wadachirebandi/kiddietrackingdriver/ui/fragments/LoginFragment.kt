@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.ui.fragments
+package com.wadachirebandi.kiddietrackingdriver.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.wadachirebandi.kiddietrackingadmin.R
-import com.wadachirebandi.kiddietrackingadmin.databinding.FragmentLoginBinding
+import com.wadachirebandi.kiddietrackingdriver.R
+import com.wadachirebandi.kiddietrackingdriver.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 

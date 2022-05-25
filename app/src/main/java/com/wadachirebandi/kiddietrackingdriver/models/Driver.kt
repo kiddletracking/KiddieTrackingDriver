@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.models
+package com.wadachirebandi.kiddietrackingdriver.models
 
 data class Driver(
     val driver_name: String? = "",

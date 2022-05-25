@@ -1,6 +1,6 @@
-package com.wadachirebandi.kiddietrackingadmin.notification
+package com.wadachirebandi.kiddietrackingdriver.notification
 
-import com.wadachirebandi.kiddietrackingadmin.notification.NotificationConstants.BASE_URL
+import com.wadachirebandi.kiddietrackingdriver.notification.NotificationConstants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

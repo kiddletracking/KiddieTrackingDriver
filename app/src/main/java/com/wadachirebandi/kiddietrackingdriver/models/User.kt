@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin.models
+package com.wadachirebandi.kiddietrackingdriver.models
 
 data class User(
     val uid: String = "",

@@ -1,4 +1,4 @@
-package com.wadachirebandi.kiddietrackingadmin
+package com.wadachirebandi.kiddietrackingdriver
 
 import org.junit.Test
 
