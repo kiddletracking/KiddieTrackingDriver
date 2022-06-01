@@ -18,58 +18,28 @@
         android:layout_margin="20dp"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/driver_name_textInput"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <TextView
+        android:id="@+id/driverName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="@string/driver_name"
-        app:boxStrokeColor="@color/primary"
-        app:hintTextColor="@color/lightGrey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        android:fontFamily="@font/nunito_extra_bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="Amar mane"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/driverName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/number_textInput"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <TextView
+        android:id="@+id/driverContentNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="@string/driver_contact_number"
-        app:boxStrokeColor="@color/primary"
-        app:hintTextColor="@color/lightGrey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/driver_name_textInput">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/driverContentNumber"
-            android:fontFamily="@font/nunito_regular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/saveDriverDetailsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/nunito_bold"
-        android:background="@drawable/btn_background"
-        android:backgroundTint="@color/primary"
-        android:text="@string/save"
-        app:layout_constraintTop_toBottomOf="@+id/number_textInput" />
+        android:fontFamily="@font/nunito_extra_bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@+id/driverName"
+        tools:text="+911234567890"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

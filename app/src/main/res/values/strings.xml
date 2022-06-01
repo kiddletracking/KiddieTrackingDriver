@@ -6,7 +6,7 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="child_information">Children Information</string>
-    <string name="edit_driver_details">Edit Driver Details</string>
+    <string name="edit_driver_details">Driver Details</string>
     <string name="start_stop_journal">Start/Stop Journal</string>
     <string name="check_in">Check-In</string>
     <string name="absent">Absent</string>

@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.wadachirebandi.kiddietrackingdriver.daos.DriverDao
@@ -34,41 +32,13 @@ class DriverFragment : Fragment() {
                 updateUi((it.toObject(Driver::class.java)))
             }
 
-        binding.saveDriverDetailsButton.setOnClickListener {
-            if (binding.driverName.text.toString() != ""
-                && binding.driverContentNumber.text.toString() != ""
-            ) {
-                updateDriverDetails()
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Please Edit all details before saving",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-
         return binding.root
-    }
-
-    private fun updateDriverDetails() {
-        val driver =
-            Driver(binding.driverName.text.toString(), binding.driverContentNumber.text.toString())
-        driverDao.driverCollection.document("OtQfKg2Qxi6QAvzQIMLG").set(driver)
-            .addOnSuccessListener {
-                Toast.makeText(
-                    requireContext(),
-                    "Driver Details Edited Successfully",
-                    Toast.LENGTH_SHORT
-                ).show()
-                findNavController().navigateUp()
-            }
     }
 
     private fun updateUi(driverDetails: Driver?) {
         if (driverDetails != null) {
-            binding.driverName.setText(driverDetails.driver_name)
-            binding.driverContentNumber.setText(driverDetails.driver_number)
+            binding.driverName.text = driverDetails.driver_name
+            binding.driverContentNumber.text = driverDetails.driver_number
         }
 
     }
